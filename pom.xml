@@ -11,6 +11,7 @@
 	<groupId>com.revature</groupId>
 	<artifactId>Project2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Project2</name>
 	<description>Movie review application</description>
 
@@ -45,7 +46,7 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-	<packaging>war</packaging>
+	
 	<build>
 		<plugins>
 			<plugin>
