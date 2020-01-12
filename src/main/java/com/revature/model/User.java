@@ -13,7 +13,7 @@ public class User {
 	
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="profileid")
     private int profileid;
     @Column(name="username", unique = true)
@@ -30,29 +30,29 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String username, String pwd, String fullname, String aboutme) {
+	public User(int id, String name, String pwd, String fullname, String aboutme) {
 		super();
 		this.profileid = id;
-		this.username = username;
+		this.fullname = name;
 		this.pwd = pwd;
 		this.fullname = fullname;
 		this.aboutme = aboutme;
 	}
 
-	public int getProfileid() {
+	public int getId() {
 		return profileid;
 	}
 
-	public void setProfileid(int profileid) {
-		this.profileid = profileid;
+	public void setId(int id) {
+		this.profileid = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return fullname;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.fullname = name;
 	}
 
 	public String getPwd() {
@@ -86,8 +86,8 @@ public class User {
 		result = prime * result + ((aboutme == null) ? 0 : aboutme.hashCode());
 		result = prime * result + ((fullname == null) ? 0 : fullname.hashCode());
 		result = prime * result + profileid;
+		result = prime * result + ((fullname == null) ? 0 : fullname.hashCode());
 		result = prime * result + ((pwd == null) ? 0 : pwd.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -112,26 +112,24 @@ public class User {
 			return false;
 		if (profileid != other.profileid)
 			return false;
+		if (fullname == null) {
+			if (other.fullname != null)
+				return false;
+		} else if (!fullname.equals(other.fullname))
+			return false;
 		if (pwd == null) {
 			if (other.pwd != null)
 				return false;
 		} else if (!pwd.equals(other.pwd))
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [profileid=" + profileid + ", username=" + username + ", pwd=" + pwd + ", fullname=" + fullname
-				+ ", aboutme=" + aboutme + "]";
+		return "User [id=" + profileid + ", name=" + fullname + ", pwd=" + pwd + ", fullname=" + fullname + ", aboutme=" + aboutme
+				+ "]";
 	}
-
-	
 	
 	
     

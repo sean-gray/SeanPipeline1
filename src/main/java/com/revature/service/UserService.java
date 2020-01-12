@@ -26,23 +26,8 @@ public class UserService {
 	public User findUserByUsername(String username) {
 		return this.userRepository.findUserByUsername(username);
 	}
-	public int findUseridByUsername(String username) {
-		System.out.println("username is currently " + username);
-		User user = this.userRepository.findUserByUsername(username);
-		return user.getProfileid();
-	}
-	public String findUsernameByUserid(int userid) {
-		User user = this.userRepository.findUsernameByProfileid(userid);
-		return user.getUsername();
-	}
 
 	public List<User> findAll() {
 		return this.userRepository.findAll();
 	}
-	
-	public void insertUser(User u) {
-		System.out.println("hit the user service and username is" + u.getUsername());
-		this.userRepository.save(u);
-	}
-	
 }

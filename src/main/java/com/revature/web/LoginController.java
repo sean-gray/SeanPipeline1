@@ -17,7 +17,7 @@ import com.revature.model.User;
 import com.revature.service.UserService;
 
 @RestController(value = "loginController")
-@CrossOrigin(origins = "http://localhost:4200")
+		@CrossOrigin(origins = "http://localhost:4200")
 public class LoginController {
 	private static UserService userService;
 	@Autowired
@@ -51,28 +51,5 @@ public class LoginController {
 	@GetMapping("/logout")
 	public void logout(HttpSession session) {
 		session.invalidate();
-	}
-	@RequestMapping(value = { "/checkuser" }, method = RequestMethod.POST)
-	public boolean checkUser(@RequestParam("username") String username) {
-		User user = userService.findUserByUsername(username);
-		if (user == null) {
-			System.out.println("User name isn't taken");
-			return false;
-		} else {
-			System.out.println("User name is taken");
-			return true;
-		}
-	}
-	@RequestMapping(value = { "/register" }, method = RequestMethod.POST)
-	public void register(@RequestParam("username") String username, 
-						 @RequestParam("password") String password, 
-						 @RequestParam("fullname") String fullname, 
-						 @RequestParam("aboutme") String aboutme,
-						 HttpSession session) {
-						System.out.println("username is " + username);
-						System.out.println("full name is : " + fullname);
-						System.out.println("about me: " + aboutme);
-						User newuser = new User(0, username, password, fullname, aboutme);
-						userService.insertUser(newuser);
 	}
 }

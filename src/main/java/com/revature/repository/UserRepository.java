@@ -12,7 +12,5 @@ import com.revature.model.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	public User findUserByUsernameAndPwd(String username, String password);
 	public User findUserByUsername(String username);
-	public User findUsernameByProfileid(int userid);
 	public List<User> findAll();
-	<U extends User> U save(U u);
 }
