@@ -15,7 +15,7 @@ import com.revature.model.Review;
 @CrossOrigin(origins = "http://localhost:4200")
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
 	List<Review> findAll();
-	<R extends Review> R save(Review r);
+	<R extends Review> R save(R r);
 	List<Review> findReviewByUserid(int username);
 	List<Review> findReviewByMovieid(String movieid);
 	List<Review> findReviewByRevid(int revid);
