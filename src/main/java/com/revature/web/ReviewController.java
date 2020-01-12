@@ -20,7 +20,7 @@ import com.revature.service.ReviewService;
 import com.revature.service.UserService;
 
 @RestController(value = "reviewController")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://64.189.196.133")
 public class ReviewController {
 	private static ReviewService reviewService;
 	@Autowired
