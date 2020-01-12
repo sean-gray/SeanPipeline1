@@ -14,5 +14,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	public User findUserByUsername(String username);
 	public User findUsernameByProfileid(int userid);
 	public List<User> findAll();
-	<U extends User> U save(User u);
+	<U extends User> U saveAndFlush(User u);
 }

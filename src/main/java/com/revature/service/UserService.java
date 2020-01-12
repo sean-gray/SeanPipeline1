@@ -42,7 +42,7 @@ public class UserService {
 	
 	public void insertUser(User u) {
 		System.out.println("hit the user service and username is" + u.getUsername());
-		this.userRepository.save(u);
+		this.userRepository.saveAndFlush(u);
 	}
 	
 }
