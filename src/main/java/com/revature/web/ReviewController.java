@@ -20,7 +20,7 @@ import com.revature.service.ReviewService;
 import com.revature.service.UserService;
 
 @RestController(value = "reviewController")
-@CrossOrigin(origins = "http://moviegram111119.s3-website.us-east-2.amazonaws.com/")
+@CrossOrigin()
 public class ReviewController {
 	private static ReviewService reviewService;
 	@Autowired
